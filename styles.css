@@ -1,0 +1,279 @@
+/*Time for the CSS*/
+* {margin: 0; padding: 0;}
+
+body{ 
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    background: #ccc;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/* Anchors */
+a:link, a:visited {
+	color: #C74350;
+	text-decoration: none;
+}
+a:hover, a:active {
+	background-color: #C74350;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #333;
+}
+
+div.figure {
+    margin:0px auto;
+    display:block
+    border: thin silver solid;
+    padding: 0.5em;
+}
+div.figure p {
+    margin:5px;
+    text-align: center;
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+}
+
+#headline {
+    background: #DC143C;
+    color: white;
+    width: 645;
+    text-align: center;
+    font-size: 45;
+    margin: 20px auto;
+    border-radius: 5px;
+    border-color: red;
+}
+
+/* Main Nav */
+#banner nav {
+    background: #000305;
+    font-size: 1.143em;
+    height: 40px;
+    line-height: 30px;
+    margin: -18px auto 0em auto;
+    padding: 0;
+    text-align: center;
+    width: 645px;
+    
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#banner nav ul {list-style: none; margin: 0 auto; width: 645px;}
+#banner nav li {float: left; display: inline; margin: 0;}
+
+#banner nav a:link, #banner nav a:visited {
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    padding: 5px 1.5em;
+    text-decoration: none;
+}
+#banner nav a:hover, #banner nav a:active,
+#banner nav .active a:link, #banner nav .active a:visited {
+    background:  #DC143C;
+    color: #fff;
+    text-shadow: none !important;
+}
+
+#banner nav li:first-child a {
+    border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+/* Old navigator
+   .nav{
+   border:1px solid #ccc;
+   border-width:0px 0;
+   list-style:none;
+   margin:0;
+   padding:0;
+   text-align:center;
+   }
+   .nav li{
+   display:inline;
+   }
+   .nav a{
+   display:inline-block;
+   padding:10px;
+   }
+   */
+
+.slider{
+    width: 640px; /*Same as width of the large image*/
+    position: relative;
+    /*Instead of height we will use padding*/
+    padding-top: 320px; /*That helps bring the labels down*/
+    
+    margin: 10px auto;
+    
+    /*Lets add a shadow*/
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+
+/*Last thing remaining is to add transitions*/
+.slider>img{
+    position: absolute;
+    left: 0; top: 0;
+    transition: all 0.5s;
+}
+
+.slider input[name='slide_switch'] {
+    display: none;
+}
+
+.slider label {
+    /*Lets add some spacing for the thumbnails*/
+    margin: 18px 0 0 18px;
+    border: 3px solid #999;
+    
+    float: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+    /*Default style = low opacity*/
+    opacity: 0.6;
+}
+
+.slider label img{
+    display: block;
+}
+
+/*Time to add the click effects*/
+.slider input[name='slide_switch']:checked+label {
+    border-color: #666;
+    opacity: 1;
+}
+/*Clicking any thumbnail now should change its opacity(style)*/
+/*Time to work on the main images*/
+.slider input[name='slide_switch'] ~ img {
+    opacity: 0;
+    transform: scale(1.1);
+}
+/*That hides all main images at a 110% size
+  On click the images will be displayed at normal size to complete the effect
+  */
+.slider input[name='slide_switch']:checked+label+img {
+    opacity: 1;
+    transform: scale(1);
+}
+/*Clicking on any thumbnail now should activate the image related to it*/
+
+/*We are done :)*/
+
+/*
+	About
+*****************/
+#about {
+	background: #fff;
+	font-style: normal;
+	margin-bottom: 2em;
+	overflow: hidden;
+	padding: 10px;
+	text-align: left;
+	margin: 10px auto;
+	width: 380px;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+#about .primary {float: left; width: 165px;}
+#about .primary strong {color: #C64350; display: block; font-size: 1.286em;}
+#about .photo {float: left; margin: 5px 20px; width:120px;}
+
+#about .url:link, #about .url:visited {text-decoration: none;}
+
+#about .bio {float: right; width: 220px;font-size:13px;}
+
+/*
+	Footer
+*****************/
+#contentinfo {padding-bottom: 2em; text-align: right; position:relative;}
+
+#webm
+{
+        font-family: 'Quicksand', sans-serif;
+        font-size:10pt;
+	color: rgb(100,100,100);
+	margin:-50px;
+	clear:both;
+        padding:20px;
+	text-align:center;
+}
+
+/*For research */
+
+#contenido{
+    border-bottom: 1px solid #eee;
+    padding: 30px 30px;
+    text-align:justify;
+}
+
+/*For news and people*/
+
+/*List*/
+#ol 
+{
+    list-style: outside decimal;
+    margin: 1em 0 1.5em 1.5em;
+}
+
+#content {
+    background: #fff;
+    margin-bottom: 2em;
+    overflow: hidden;
+    padding: 10px 20px;
+    width: 750px;
+    margin: 20px auto;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.hentry {
+    border-bottom: 1px solid #eee;
+    padding: 1.5em 0;
+}
+/*li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}*/
+#content > .hentry {padding: 1em 0;}
+
+.entry-title {font-size: 1.429em; margin-bottom: 0;}
+.entry-titlepeople {font-size: 1.429em; margin-bottom: 0;text-align:center;}
+.entry-title a:link, .entry-title a:visited {text-decoration: none;}
+.entry-people {margin:20px; text-align:center;}
+.entry-content {margin: 5px auto;}
+.hentry .post-info * {font-style: normal;}
+
+/* Content */
+.hentry footer {margin-bottom: 2em;}
+.hentry footer address {display: inline;}
+#posts-list footer address {display: block;}
+
+/* Blog Index */
+#posts-list {list-style: none; margin: 0;}
+#posts-list .hentry {padding-left: 200px; position: relative;}
+#posts-list .hentry:hover {
+    background: #DC143C;
+    color: #fff;
+}
+#posts-list .hentry:hover a:link, #posts-list .hentry:hover a:visited {
+    color: #F6CF74;
+    text-shadow: 1px 1px 1px #333;
+}
+
+#posts-list footer {
+    left: 10px;
+    position: absolute;
+    top: 1.5em;
+    width: 190px;
+}
